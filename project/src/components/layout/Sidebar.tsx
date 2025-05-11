@@ -62,7 +62,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isMobileOpen, setIsMobileOpen }) => {
           <div className="px-4 py-5 border-b border-gray-200 flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Coffee size={24} className="text-orange-500" />
-              <h1 className="text-xl font-bold text-gray-800">Pastelaria</h1>
+              <h1 className="text-xl font-bold text-gray-800">Point do Pastel II</h1>
             </div>
             <button 
               className="lg:hidden text-gray-500 hover:text-gray-700"

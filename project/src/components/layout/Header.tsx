@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ setIsMobileOpen }) => {
         </button>
 
         <div className="flex-1 lg:ml-8">
-          <h1 className="text-xl font-semibold text-gray-800 lg:hidden">Pastelaria</h1>
+          <h1 className="text-xl font-semibold text-gray-800 lg:hidden">Point do Pastel II</h1>
         </div>
 
         <div className="flex items-center space-x-4">

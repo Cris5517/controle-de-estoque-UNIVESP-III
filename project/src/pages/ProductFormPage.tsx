@@ -243,30 +243,46 @@ const ProductFormPage: React.FC = () => {
                     required
                   />
                   
-                  <div className="grid grid-cols-2 gap-4">
-                    <Input
-                      label="Quantidade em Estoque"
-                      name="stockQuantity"
-                      type="number"
-                      min="0"
-                      value={formData.stockQuantity}
-                      onChange={handleChange}
-                      error={errors.stockQuantity}
-                      placeholder="0"
-                      required
-                    />
-                    
-                    <Input
-                      label="Estoque Mínimo"
-                      name="minimumStock"
-                      type="number"
-                      min="0"
-                      value={formData.minimumStock}
-                      onChange={handleChange}
-                      error={errors.minimumStock}
-                      placeholder="0"
-                      required
-                    />
+                  <div className="flex flex-wrap gap-4 mt-4">
+                    <div className="flex-1 min-w-[120px]">
+                      <Input
+                        label="Qtd. em Estoque"
+                        name="stockQuantity"
+                        type="number"
+                        min="0"
+                        value={formData.stockQuantity}
+                        onChange={handleChange}
+                        error={errors.stockQuantity}
+                        placeholder="0"
+                        required
+                        fullWidth
+                      />
+                    </div>
+                    <div style={{ minWidth: 90, maxWidth: 120 }}>
+                      <Select
+                        label="Unidade"
+                        name="unit"
+                        value={formData.unit}
+                        onChange={handleChange}
+                        options={units.map(unit => ({ value: unit, label: unit }))}
+                        required
+                        fullWidth
+                      />
+                    </div>
+                    <div className="flex-1 min-w-[120px]">
+                      <Input
+                        label="Estoque Mínimo"
+                        name="minimumStock"
+                        type="number"
+                        min="0"
+                        value={formData.minimumStock}
+                        onChange={handleChange}
+                        error={errors.minimumStock}
+                        placeholder="0"
+                        required
+                        fullWidth
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
