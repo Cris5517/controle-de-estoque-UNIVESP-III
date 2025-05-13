@@ -12,6 +12,7 @@ import ProductsPage from './pages/ProductsPage';
 import ProductFormPage from './pages/ProductFormPage';
 import SuppliersPage from './pages/SuppliersPage';
 import SupplierFormPage from './pages/SupplierFormPage';
+import RegisterPage from './pages/RegisterPage';
 
 // Protected Route Component
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -51,6 +52,8 @@ function App() {
         <Route path="suppliers/new" element={<SupplierFormPage />} />
         <Route path="suppliers/edit/:id" element={<SupplierFormPage />} />
       </Route>
+      
+      <Route path="/register" element={<RegisterPage />} />
       
       {/* Fallback route */}
       <Route path="*" element={<Navigate to="/" />} />

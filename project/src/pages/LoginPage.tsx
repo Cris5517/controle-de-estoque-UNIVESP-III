@@ -79,6 +79,15 @@ const LoginPage: React.FC = () => {
             </div>
           </form>
 
+          <div className="mt-4 text-center">
+            <button
+              className="text-orange-600 hover:underline text-sm"
+              onClick={() => navigate('/register')}
+            >
+              Não tem uma conta? Cadastre-se
+            </button>
+          </div>
+
           <div className="mt-8 text-center text-sm text-gray-600">
             <p>Contas para demonstração:</p>
             <p className="mt-1">

@@ -4,6 +4,7 @@ interface User {
   id: string;
   name: string;
   email: string;
+  password: string;
   role: 'admin' | 'staff';
 }
 
@@ -36,6 +37,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             id: '1',
             name: 'Administrador',
             email: 'admin@pastry.com',
+            password: 'password',
             role: 'admin',
           };
           setUser(userData);
@@ -46,13 +48,30 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             id: '2',
             name: 'Funcionário',
             email: 'staff@pastry.com',
+            password: 'password',
             role: 'staff',
           };
           setUser(userData);
           localStorage.setItem('user', JSON.stringify(userData));
           resolve();
         } else {
-          reject(new Error('Credenciais inválidas'));
+          // Verifica usuários cadastrados no localStorage
+          const users: User[] = JSON.parse(localStorage.getItem('users') || '[]');
+          const found = users.find((u: User) => u.email === email && u.password === password);
+          if (found) {
+            const userData: User = {
+              id: found.id,
+              name: found.name,
+              email: found.email,
+              password: found.password,
+              role: found.role,
+            };
+            setUser(userData);
+            localStorage.setItem('user', JSON.stringify(userData));
+            resolve();
+          } else {
+            reject(new Error('Credenciais inválidas'));
+          }
         }
       }, 800);
     });
